@@ -30,6 +30,7 @@ body {
 	font-weight: 400;
 }
 .value {
+	display: flex;
 	font-weight: 500;
 }
 .key {
@@ -41,4 +42,7 @@ body {
 }
 span.tag.openingBrace {
 	display: block;
+}
+.key-value {
+	display: flex;
 }

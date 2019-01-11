@@ -35,6 +35,7 @@
 		}
 	],
 	"obj": {
-		"key": "value"
+		"key": "value",
+		"boolTest": true
 	}
 }
