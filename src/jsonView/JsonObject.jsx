@@ -1,4 +1,4 @@
-import React, { div } from "react";
+import React, { Fragment } from "react";
 import { OpeningBrace, ClosingBrace } from "./tags";
 import { KeyValue } from "./Object/KeyValue";
 import { DeapthToggler } from "./DepthToggler";
@@ -9,14 +9,16 @@ const JsonObject = props => {
 		<div className="object">
 			<OpeningBrace />
 			<DeapthToggler depth={depth}>
-				{Object.keys(json).map((key, index) => (
-					<KeyValue
-						keyName={key}
-						value={json[key]}
-						key={index}
-						depth={props.depth}
-					/>
-				))}
+				<Fragment>
+					{Object.keys(json).map((key, index) => (
+						<KeyValue
+							keyName={key}
+							value={json[key]}
+							key={index}
+							depth={props.depth}
+						/>
+					))}
+				</Fragment>
 			</DeapthToggler>
 			<ClosingBrace />
 		</div>

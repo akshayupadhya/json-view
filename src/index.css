@@ -41,7 +41,7 @@ body {
 	color: #e1efff;
 }
 span.tag.openingBrace {
-	display: block;
+	/* display: block; */
 }
 .key-value {
 	display: flex;

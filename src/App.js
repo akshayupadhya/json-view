@@ -5,7 +5,6 @@ import "./App.css";
 
 class App extends Component {
 	render() {
-		console.log(typeof data.formed);
 		return (
 			<Fragment>
 				<h1>JSON View</h1>
