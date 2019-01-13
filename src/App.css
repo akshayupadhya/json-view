@@ -30,3 +30,16 @@
     transform: rotate(360deg);
   }
 }
+.rotated{
+  animation:  Rotate-arrow 1 0.5s linear;
+  transform: rotate(90deg);
+  /* Rname duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes Rotate-arrow{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
