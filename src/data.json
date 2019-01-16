@@ -5,6 +5,7 @@
 	"secretBase": "Super tower",
 	"active": true,
 	"members": [
+		["test1"],
 		{
 			"name": "Molecule Man",
 			"age": 29,

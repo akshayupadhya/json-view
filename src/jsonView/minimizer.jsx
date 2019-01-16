@@ -5,8 +5,8 @@ export const Minimizer = props => {
 	const { isMinimized, minimizer } = props;
 	return (
 		<Tabs
-			newClass={!isMinimized ? "rotated" : undefined}
-			clickHandler={()=>minimizer(!isMinimized)}
+			newClass={!isMinimized ? "rotated" : ""}
+			clickHandler={() => minimizer(!isMinimized)}
 		/>
 	);
 };
