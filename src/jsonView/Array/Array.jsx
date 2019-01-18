@@ -1,27 +1,31 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { OpeningBracet, ClosingBracet } from "../tags";
 import { Value } from "../Object/Value";
 import { DeapthToggler } from "../DepthToggler";
+import { DataType } from "../meta";
 export const ArrayView = props => {
 	const { json, depth } = props;
 	const ArrayLength = json.length;
 	return (
-		<div className={"array"}>
-			<OpeningBracet />
-			<DeapthToggler depth={depth} length={json.length}>
-				<div className="ArrayView">
-					{json.map((val, key) => (
-						<Value
-							key={key}
-							value={JSON.stringify(val)}
-							depth={depth}
-							isArray={true}
-							isLastElement={key === ArrayLength - 1}
-						/>
-					))}
-				</div>
-			</DeapthToggler>
-			<ClosingBracet />
-		</div>
+		<Fragment>
+			{depth ? <DataType DataType="Array" /> : undefined}
+			<div className={"array"}>
+				<OpeningBracet />
+				<DeapthToggler depth={depth} length={json.length}>
+					<div className="ArrayView">
+						{json.map((val, key) => (
+							<Value
+								key={key}
+								value={JSON.stringify(val)}
+								depth={depth}
+								isArray={true}
+								isLastElement={key === ArrayLength - 1}
+							/>
+						))}
+					</div>
+				</DeapthToggler>
+				<ClosingBracet />
+			</div>
+		</Fragment>
 	);
 };

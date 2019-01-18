@@ -2,26 +2,30 @@ import React, { Fragment } from "react";
 import { OpeningBrace, ClosingBrace } from "./tags";
 import { KeyValue } from "./Object/KeyValue";
 import { DeapthToggler } from "./DepthToggler";
+import { DataType } from "./meta";
 const JsonObject = props => {
 	let { json, depth } = props;
 	depth = depth || 0;
 	return (
-		<div className="object">
-			<OpeningBrace />
-			<DeapthToggler depth={depth}>
-				<Fragment>
-					{Object.keys(json).map((key, index) => (
-						<KeyValue
-							keyName={key}
-							value={json[key]}
-							key={index}
-							depth={depth}
-						/>
-					))}
-				</Fragment>
-			</DeapthToggler>
-			<ClosingBrace />
-		</div>
+		<Fragment>
+			{depth ? <DataType DataType="Array" /> : undefined}
+			<div className="object">
+				<OpeningBrace />
+				<DeapthToggler depth={depth}>
+					<Fragment>
+						{Object.keys(json).map((key, index) => (
+							<KeyValue
+								keyName={key}
+								value={json[key]}
+								key={index}
+								depth={depth}
+							/>
+						))}
+					</Fragment>
+				</DeapthToggler>
+				<ClosingBrace />
+			</div>
+		</Fragment>
 	);
 };
 export default JsonObject;
