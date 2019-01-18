@@ -6,7 +6,7 @@ export const Tabs = props => {
 		<span
 			className={`meta tab ${newClass ? newClass : ""}`}
 			onClick={() => (clickHandler ? clickHandler() : undefined)}>
-			→
+			⟹
 		</span>
 	);
 };

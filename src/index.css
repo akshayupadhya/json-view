@@ -32,6 +32,8 @@ body {
 .value {
 	display: flex;
 	font-weight: 500;
+	justify-content: center;
+	align-items: center;
 }
 .key {
 	font-weight: 500;
@@ -45,4 +47,13 @@ span.tag.openingBrace {
 }
 .key-value {
 	display: flex;
+}
+.ArrayView {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: flex-start; */
+	align-items: flex-start;
+}
+span.meta.tab {
+	font-size: 2rem;
 }
