@@ -22,10 +22,11 @@ export const Value = props => {
 	} else {
 		[isMinimized, minimize] = useState(depth >= 1);
 	}
+	const isMinimizable = type === "Object" || type === "Array";
 	return (
 		<minimizeContext.Provider value={{ isMinimized, minimize }}>
 			<div className="value">
-				{isArray ? (
+				{isArray && isMinimizable ? (
 					<Minimizer isMinimized={isMinimized} minimizer={minimize} />
 				) : (
 					undefined
