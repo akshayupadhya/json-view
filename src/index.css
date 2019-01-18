@@ -2,18 +2,11 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "IBM Plex Mono", monospace;
-	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #193549;
 }
 
-/* * {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
-} */
 .DataType {
 	color: cornflowerblue;
 }
@@ -34,6 +27,7 @@ body {
 	font-weight: 500;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 .key {
 	font-weight: 500;
@@ -42,18 +36,28 @@ body {
 .generic {
 	color: #e1efff;
 }
-span.tag.openingBrace {
-	/* display: block; */
-}
 .key-value {
 	display: flex;
+	align-items: center;
 }
 .ArrayView {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: flex-start; */
 	align-items: flex-start;
 }
 span.meta.tab {
+	font-size: 2rem;
+}
+.array,
+.object {
+	padding: 1% 5%;
+}
+span.meta.comma {
+	position: absolute;
+	bottom: 0;
+	left: 100%;
+}
+span.tag.openingBrace,
+span.tag.closingBrace {
 	font-size: 2rem;
 }
