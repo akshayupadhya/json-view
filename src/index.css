@@ -4,15 +4,8 @@ body {
 	font-family: "IBM Plex Mono", monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #193549;
 }
 
-.DataType {
-	color: cornflowerblue;
-}
-.tab {
-	color: gray;
-}
 .meta {
 	font-weight: 300;
 }
@@ -31,10 +24,6 @@ body {
 }
 .key {
 	font-weight: 500;
-	color: #ffc600;
-}
-.generic {
-	color: #e1efff;
 }
 .key-value {
 	display: flex;

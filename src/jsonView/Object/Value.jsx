@@ -2,18 +2,19 @@ import React, { Fragment, useState, createContext } from "react";
 import JsonObject from "../JsonObject";
 import { Utils } from "../utils/utils";
 import { ArrayView } from "../Array/Array";
-import { DataType, Comma } from "../meta";
+import { DataType, Comma, Tabs } from "../meta";
 import { Minimizer } from "../minimizer";
 export const minimizeContext = createContext();
 export const Value = props => {
 	let { depth, value, isArray, isLastElement, isNodeMinimizable } = props;
-	depth = (depth || 0) + 1;
 	const json = JSON.parse(value);
 	const type = Utils.isObject(json)
 		? "Object"
 		: Utils.isArray(json)
 		? "Array"
 		: typeof (Number(value) || value === "true" || value === "false" || value);
+	depth = (depth || 0) + 1;
+	// depth = isArray ? depth + 1 : depth;
 	let isMinimized, minimize;
 	if (isNodeMinimizable) {
 		// { isMinimized, minimize } = props;// i really dont know what is mistake here but it throws error
@@ -26,8 +27,12 @@ export const Value = props => {
 	return (
 		<minimizeContext.Provider value={{ isMinimized, minimize }}>
 			<div className="value">
-				{isArray && isMinimizable ? (
-					<Minimizer isMinimized={isMinimized} minimizer={minimize} />
+				{isArray ? (
+					isMinimizable ? (
+						<Minimizer isMinimized={isMinimized} minimizer={minimize} />
+					) : (
+						<Tabs />
+					)
 				) : (
 					undefined
 				)}
@@ -38,7 +43,9 @@ export const Value = props => {
 				) : (
 					<Fragment>
 						<DataType DataType={type} />
-						<span className="generic">{value}</span>
+						<span className={`generic value-depth-${depth} type-${type}`}>
+							{value}
+						</span>
 					</Fragment>
 				)}
 				{!!!isLastElement ? <Comma /> : undefined}

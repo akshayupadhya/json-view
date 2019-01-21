@@ -3,14 +3,15 @@ import { OpeningBrace, ClosingBrace } from "./tags";
 import { KeyValue } from "./Object/KeyValue";
 import { DeapthToggler } from "./DepthToggler";
 import { DataType } from "./meta";
-const JsonObject = props => {
-	let { json, depth } = props;
+import "./themes.scss";
+const JsonObject = ({ json, depth, theme }) => {
 	depth = depth || 0;
+	theme = theme || "cobalt";
 	return (
 		<Fragment>
-			{depth ? <DataType DataType="Array" /> : undefined}
-			<div className="object">
-				<OpeningBrace />
+			{depth ? <DataType DataType="Object" /> : undefined}
+			<div className={`object ${!depth ? theme : ""}`}>
+				<OpeningBrace depth={depth ? depth : 1} />
 				<DeapthToggler depth={depth}>
 					<Fragment>
 						{Object.keys(json).map((key, index) => (
@@ -23,7 +24,7 @@ const JsonObject = props => {
 						))}
 					</Fragment>
 				</DeapthToggler>
-				<ClosingBrace />
+				<ClosingBrace depth={depth ? depth : 1} />
 			</div>
 		</Fragment>
 	);

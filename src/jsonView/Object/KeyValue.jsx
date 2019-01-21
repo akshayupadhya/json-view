@@ -20,7 +20,7 @@ export const KeyValue = props => {
 			) : (
 				<Tabs />
 			)}
-			<Key keyName={keyName} /> :
+			<Key keyName={keyName} depth={depth} /> :
 			<Value value={JSON.stringify(value)} depth={depth} {...newProps} />
 		</div>
 	);

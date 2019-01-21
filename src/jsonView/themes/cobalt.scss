@@ -1,0 +1,28 @@
+.cobalt {
+	background-color: #193549;
+	.tag-depth-1 {
+		color: gold;
+	}
+	.tag-depth-2 {
+		color: orchid;
+	}
+	.tag-depth-3 {
+		color: lightskyblue;
+	}
+	.key {
+		color: #ffc600;
+	}
+	.type-number,
+	.type-boolean {
+		color: #ff628c;
+	}
+	.DataType {
+		color: cornflowerblue;
+	}
+	.tab {
+		color: gray;
+	}
+	.generic {
+		color: #e1efff;
+	}
+}

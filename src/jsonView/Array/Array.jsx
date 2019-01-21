@@ -10,7 +10,7 @@ export const ArrayView = props => {
 		<Fragment>
 			{depth ? <DataType DataType="Array" /> : undefined}
 			<div className={"array"}>
-				<OpeningBracet />
+				<OpeningBracet depth={depth ? depth : 1} />
 				<DeapthToggler depth={depth} length={json.length}>
 					<div className="ArrayView">
 						{json.map((val, key) => (
@@ -24,7 +24,7 @@ export const ArrayView = props => {
 						))}
 					</div>
 				</DeapthToggler>
-				<ClosingBracet />
+				<ClosingBracet depth={depth ? depth : 1} />
 			</div>
 		</Fragment>
 	);

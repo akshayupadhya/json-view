@@ -1,14 +1,22 @@
 import React from "react";
-
-export const OpeningBrace = () => (
-	<span className="tag openingBrace"> {"{"}</span>
+const depthAnalyse = depth => (depth > 3 ? (depth % 3) + 1 : depth);
+export const OpeningBrace = props => (
+	<span className={`tag tag-depth-${depthAnalyse(props.depth)} openingBrace`}>
+		{"{"}
+	</span>
 );
-export const ClosingBrace = () => (
-	<span className="tag closingBrace">{"}"}</span>
+export const ClosingBrace = props => (
+	<span className={`tag tag-depth-${depthAnalyse(props.depth)} closingBrace`}>
+		{"}"}
+	</span>
 );
-export const OpeningBracet = () => (
-	<span className="tag openingBrace">{"["}</span>
+export const OpeningBracet = props => (
+	<span className={`tag openingBrace tag-depth-${depthAnalyse(props.depth)}`}>
+		{"["}
+	</span>
 );
-export const ClosingBracet = () => (
-	<span className="tag closingBrace">{"]"}</span>
+export const ClosingBracet = props => (
+	<span className={`tag closingBrace tag-depth-${depthAnalyse(props.depth)}`}>
+		{"]"}
+	</span>
 );
