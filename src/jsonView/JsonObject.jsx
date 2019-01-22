@@ -3,7 +3,7 @@ import { OpeningBrace, ClosingBrace } from "./tags";
 import { KeyValue } from "./Object/KeyValue";
 import { DeapthToggler } from "./DepthToggler";
 import { DataType } from "./meta";
-import "./themes.scss";
+// import "./themes.scss";
 const JsonObject = ({ json, depth, theme }) => {
 	depth = depth || 0;
 	theme = theme || "cobalt";
