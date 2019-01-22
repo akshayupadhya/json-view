@@ -2,7 +2,7 @@
 	"name": "react-jsonprettyprint",
 	"version": "0.0.1",
 	"description": "a react library to pretty print json",
-	"main": "src/index.js",
+	"main": "src/App.js",
 	"repository": "git@github.com:akshayupadhya/json-view.git",
 	"license": "MIT",
 	"private": false,
